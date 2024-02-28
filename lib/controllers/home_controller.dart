@@ -1,16 +1,23 @@
 import 'package:get/state_manager.dart';
 
 class HomeController extends GetxController {
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
   int _counter = 0;
   int get counter => _counter;
 
+  @override
+  void onInit() {
+    super.onInit();
+    print("Same as initState");
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+    print("HomeController onReady");
+  }
+
   void increment() {
     _counter++;
-    update();
+    update(['text']);
   }
 }

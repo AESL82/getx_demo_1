@@ -1,4 +1,4 @@
-# getx_demo_1.
+# getx_demo_1: Una aplicación de muestra sobre estados en Flutter con GetX.
 
 Proyecto diseñado para ilustrar la gestión de estados dentro de aplicaciones Flutter utilizando el paquete GetX.
 
@@ -19,10 +19,10 @@ Elementos dentro de esta aplciación:
 ## Indicaciones técnicas.
 
 
-Flutter versión 3.16.6 en canal estable.
-Dart versión 3.2.3.
-DevTools versión 2.28.4.
-Xcode, CocoaPods versión 1.14.3.
-Dispositivos de testeo: iPhone 15 ProMax, iPhone SE de tercera generación, iPad Pro (11 pulgadas), Motorola One Fusion con Android 11.0.
+* Flutter versión 3.16.6 en canal estable.
+* Dart versión 3.2.3.
+* DevTools versión 2.28.4.
+* Xcode, CocoaPods versión 1.14.3.
+* Dispositivos de testeo: iPhone 15 ProMax, iPhone SE de tercera generación, iPad Pro (11 pulgadas), Motorola One Fusion con Android 11.0.
 
 
