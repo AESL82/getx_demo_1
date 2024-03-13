@@ -15,7 +15,7 @@ class UsersAPI {
         'https://reqres.in/api/users',
         queryParameters: {
           "page": page,
-          "delay": 4,
+          "delay": 3,
         },
       );
 
@@ -23,7 +23,7 @@ class UsersAPI {
           .map((e) => User.fromJson(e))
           .toList();
     } catch (e) {
-      print(e);
+      //print(e);
       throw Exception('Failed to get users');
     }
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:getx_demo_1/controllers/home_controller.dart';
 import 'package:getx_demo_1/pages/home_page_widgets/home_label.dart';
+import 'package:getx_demo_1/pages/home_page_widgets/home_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,8 +13,6 @@ class HomePage extends StatelessWidget {
     return GetBuilder<HomeController>(
         init: HomeController(),
         builder: (HomeController controller) {
-          // Especifica explícitamente el tipo aquí.
-          print("build home");
           return Scaffold(
             appBar: AppBar(
               title: const Text(
@@ -24,15 +23,11 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            body: const Center(
-              // GetBuilder interior también debe especificar el tipo HomeController.
-              child: Homelabel(),
-            ),
+            body: const HomeList(),
             floatingActionButton: FloatingActionButton(
               onPressed: () {
                 controller.increment();
               },
-              tooltip: 'Increment',
               child: const Icon(Icons.add),
             ),
           );
