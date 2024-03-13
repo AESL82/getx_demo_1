@@ -3,6 +3,7 @@ import 'package:get/state_manager.dart';
 import 'package:getx_demo_1/controllers/home_controller.dart';
 import 'package:getx_demo_1/pages/home_page_widgets/home_label.dart';
 import 'package:getx_demo_1/pages/home_page_widgets/home_list.dart';
+import 'package:getx_demo_1/widgets/product_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,7 +24,10 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            body: const HomeList(),
+            // Lista de usuarios recogidos de la API de pruebas.
+            //body: const HomeList(),
+            // Lista de productos.
+            body: const ProductList(key: Key('product_list')),
             floatingActionButton: FloatingActionButton(
               onPressed: () {
                 controller.increment();

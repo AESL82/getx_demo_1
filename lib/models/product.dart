@@ -2,7 +2,8 @@ class Product {
   final int id;
   final String name, description;
   final double price, rate;
-  bool isFavorite = false;
+  bool isFavorite =
+      false; // Propiedad que no debe ser modificada, por ello no es "final".
 
   Product({
     required this.id,
