@@ -4,9 +4,9 @@ Proyecto diseñado para ilustrar la gestión de estados dentro de aplicaciones F
 
 ## Resumen e indicaciones.
 
-GetX es un paquete popular en el ecosistema Flutter que proporciona una solución eficiente y simplificada para la gestión de estados, además de ofrecer funcionalidades para la navegación y la gestión de dependencias sin necesidad de boilerplate adicional. 
+GetX es un paquete popular en el ecosistema Flutter que proporciona una solución eficiente y simplificada para la gestión de estados, además de ofrecer funcionalidades para la navegación y la gestión de dependencias sin necesidad de boilerplate (código que tiene que escribirse en múltiples lugares con poca o ninguna alteración, es decir, código repetitivo) adicional. 
 
-Elementos dentro de esta aplciación:
+Elementos dentro de esta aplicación:
 
 - Ciclo de vida de un GetxController: GetX proporciona una gestión eficiente de los recursos, asegurando que el controlador se mantenga vivo solo cuando sea necesario y se liberen los recursos cuando ya no se utilicen.
 
