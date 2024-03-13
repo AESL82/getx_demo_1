@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:getx_demo_1/controllers/global_controller.dart';
 import 'package:getx_demo_1/pages/splash_page.dart';
 import 'package:get/get.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         DeviceOrientation.portraitDown,
       ],
     );
+    Get.put(GlobalController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'GetX Demo 1',
