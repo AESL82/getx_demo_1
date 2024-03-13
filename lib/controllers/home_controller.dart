@@ -1,6 +1,8 @@
 import 'package:get/state_manager.dart';
+import 'package:get/route_manager.dart';
 import 'package:getx_demo_1/api/users_api.dart';
 import 'package:getx_demo_1/models/user.dart';
+import 'package:getx_demo_1/pages/profile_page.dart';
 
 class HomeController extends GetxController {
   int _counter = 0;
@@ -33,5 +35,12 @@ class HomeController extends GetxController {
   void increment() {
     _counter++;
     update(['text']);
+  }
+
+  showUserProfile(User user) {
+    Get.to(
+      () => const ProfilePage(),
+      arguments: user,
+    );
   }
 }
