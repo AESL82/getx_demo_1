@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
+import 'package:getx_demo_1/controllers/global_controller.dart';
 import 'package:getx_demo_1/controllers/home_controller.dart';
 import 'package:getx_demo_1/pages/home_page_widgets/home_label.dart';
 import 'package:getx_demo_1/pages/home_page_widgets/home_list.dart';
@@ -17,12 +18,21 @@ class HomePage extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(
               title: const Text(
-                'Gestión de estados con GetX',
+                'Lista de Productos',
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              actions: [
+                GetBuilder<GlobalController>(
+                  id: 'favorites',
+                  builder: (_) => MaterialButton(
+                    child: Text("Favoritos (${_.favorites.length})"),
+                    onPressed: () {},
+                  ),
+                )
+              ],
             ),
             // Lista de usuarios recogidos de la API de pruebas.
             //body: const HomeList(),
@@ -32,7 +42,12 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 controller.increment();
               },
-              child: const Icon(Icons.add),
+              //child: const Icon(Icons.add),
+              child: IconButton(
+                icon: const Icon(Icons.add),
+                onPressed: () {},
+                color: Colors.black,
+              ),
             ),
           );
         });

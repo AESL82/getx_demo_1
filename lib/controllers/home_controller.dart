@@ -36,14 +36,6 @@ class HomeController extends GetxController {
     _counter++;
     update(['text']);
   }
-  /*
-  showUserProfile(User user) {
-    Get.to(
-      () => const ProfilePage(),
-      arguments: user,
-    );
-  }
-  */
 
   Future<void> showUserProfile(User user) async {
     final result = await Get.to<String>(
