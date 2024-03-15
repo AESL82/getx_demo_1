@@ -3,6 +3,7 @@ import 'package:get/state_manager.dart';
 import 'package:getx_demo_1/controllers/reactive_controller.dart';
 import 'package:getx_demo_1/controllers/socket_client_controller.dart';
 import 'package:get/get.dart';
+import 'package:flutter/cupertino.dart';
 
 class ReactivePage extends StatelessWidget {
   const ReactivePage({super.key});
@@ -17,12 +18,20 @@ class ReactivePage extends StatelessWidget {
               body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              CupertinoTextField(
+                onChanged: (text) {
+                  socketController.setSearchText(text);
+                },
+              ),
+              // Mensaje aleatorio.
+              /*
               Obx(() => Center(
                     child: Text(
                       socketController.message.value,
                       style: const TextStyle(fontSize: 30),
                     ),
                   )),
+              */
               /*
               Obx(() => Center(
                     child: Text(
