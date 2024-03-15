@@ -10,9 +10,43 @@ class ReactivePage extends StatelessWidget {
     return GetBuilder<ReactiveController>(
         init: ReactiveController(),
         builder: (_) {
-          //print("reactive");
           return Scaffold(
-            body: Center(
+            // Con Maps.
+            body: Obx(() => ListView(
+                  children: _.mapItems.values
+                      .map(
+                        (e) => ListTile(
+                          title: Text(e),
+                          trailing: IconButton(
+                            icon: const Icon(Icons.delete),
+                            onPressed: () => _.removeMapItem(e),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                )),
+            // Con ListView.
+            /*
+            body: Obx(
+              () => ListView.builder(
+                itemBuilder: (__, index) {
+                  final String text = _.items[index];
+                  return ListTile(
+                    title: Text(text),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.delete),
+                      onPressed: () {
+                        _.removeItem(index);
+                      },
+                    ),
+                  );
+                },
+                itemCount: _.items.length,
+              ),
+            ),
+            */
+            /*
+            Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -34,6 +68,7 @@ class ReactivePage extends StatelessWidget {
                 ],
               ),
             ),
+            */
             floatingActionButton: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -41,7 +76,11 @@ class ReactivePage extends StatelessWidget {
                   heroTag: 'add',
                   child: const Icon(Icons.add),
                   onPressed: () {
-                    _.increment();
+                    //_.increment();
+                    // Con ListView.
+                    //_.addItem();
+                    // Con Maps.
+                    _.addMapItem();
                   },
                 ),
                 const SizedBox(width: 20),
