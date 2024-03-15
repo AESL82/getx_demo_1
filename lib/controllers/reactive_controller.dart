@@ -14,7 +14,9 @@ class ReactiveController extends GetxController {
   RxList<String> items = RxList<String>();
   RxMap<String, dynamic> mapItems = <String, dynamic>{}.obs;
 
-  Rx<Pet> myPet = Pet(name: "Mascota", age: 10).obs;
+  Pet myPet = Pet(
+      name: "Mascota",
+      age: 10); // Instancia de la clase Pet, que ya es observable.
 
   @override
   void onInit() {
@@ -48,7 +50,8 @@ class ReactiveController extends GetxController {
   }
 
   void setPetAge(int age) {
-    myPet.value.age = age;
-    myPet.value = myPet.value.petReturn(age: age);
+    myPet.age = age;
+    //myPet.value.age = age;
+    //myPet.value = myPet.value.petReturn(age: age);
   }
 }

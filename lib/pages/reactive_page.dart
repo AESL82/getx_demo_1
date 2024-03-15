@@ -16,13 +16,13 @@ class ReactivePage extends StatelessWidget {
             children: [
               Obx(() => Center(
                     child: Text(
-                      'Age: ${_.myPet.value.age}',
+                      'Age: ${_.myPet.age}',
                       style: const TextStyle(fontSize: 30),
                     ),
                   )),
               MaterialButton(
                 onPressed: () {
-                  _.setPetAge(_.myPet.value.age + 1);
+                  _.setPetAge(_.myPet.age + 1);
                 },
                 color: Colors.black,
                 child: const Text('Set age',
