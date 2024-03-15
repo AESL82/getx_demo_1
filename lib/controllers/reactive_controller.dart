@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
+import 'package:getx_demo_1/models/pet.dart';
 
 class ReactiveController extends GetxController {
 // Elementos relacionados a la parte 1 de la programación reactiva.
@@ -12,6 +13,8 @@ class ReactiveController extends GetxController {
 
   RxList<String> items = RxList<String>();
   RxMap<String, dynamic> mapItems = <String, dynamic>{}.obs;
+
+  Rx<Pet> myPet = Pet(name: "Mascota", age: 10).obs;
 
   @override
   void onInit() {
@@ -42,5 +45,10 @@ class ReactiveController extends GetxController {
 
   void removeMapItem(String key) {
     mapItems.remove(key);
+  }
+
+  void setPetAge(int age) {
+    myPet.value.age = age;
+    myPet.value = myPet.value.petReturn(age: age);
   }
 }

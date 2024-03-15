@@ -11,7 +11,30 @@ class ReactivePage extends StatelessWidget {
         init: ReactiveController(),
         builder: (_) {
           return Scaffold(
-            // Con Maps.
+              body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Obx(() => Center(
+                    child: Text(
+                      'Age: ${_.myPet.value.age}',
+                      style: const TextStyle(fontSize: 30),
+                    ),
+                  )),
+              MaterialButton(
+                onPressed: () {
+                  _.setPetAge(_.myPet.value.age + 1);
+                },
+                color: Colors.black,
+                child: const Text('Set age',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    )),
+              ),
+            ],
+          )
+              // Con Maps.
+              /*
             body: Obx(() => ListView(
                   children: _.mapItems.values
                       .map(
@@ -25,8 +48,9 @@ class ReactivePage extends StatelessWidget {
                       )
                       .toList(),
                 )),
-            // Con ListView.
-            /*
+            */
+              // Con ListView.
+              /*
             body: Obx(
               () => ListView.builder(
                 itemBuilder: (__, index) {
@@ -45,7 +69,7 @@ class ReactivePage extends StatelessWidget {
               ),
             ),
             */
-            /*
+              /*
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -69,6 +93,8 @@ class ReactivePage extends StatelessWidget {
               ),
             ),
             */
+              // FloatingActionButton para elementos de listas, mapas e incrementales.
+              /*
             floatingActionButton: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -93,7 +119,8 @@ class ReactivePage extends StatelessWidget {
                 )
               ],
             ),
-          );
+            */
+              );
         });
   }
 }
