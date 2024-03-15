@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:getx_demo_1/controllers/global_controller.dart';
+import 'package:getx_demo_1/pages/reactive_page.dart';
 import 'package:getx_demo_1/pages/splash_page.dart';
 import 'package:get/get.dart';
 
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SplashPage(),
+      //home: const SplashPage(),
+      home: const ReactivePage(),
     );
   }
 }
