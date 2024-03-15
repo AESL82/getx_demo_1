@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:getx_demo_1/controllers/global_controller.dart';
+import 'package:getx_demo_1/controllers/socket_client_controller.dart';
 import 'package:getx_demo_1/pages/reactive_page.dart';
 import 'package:getx_demo_1/pages/splash_page.dart';
 import 'package:get/get.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       ],
     );
     Get.put(GlobalController());
+    Get.put(SocketClientController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'GetX Demo 1',

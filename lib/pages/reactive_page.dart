@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:getx_demo_1/controllers/reactive_controller.dart';
+import 'package:getx_demo_1/controllers/socket_client_controller.dart';
+import 'package:get/get.dart';
 
 class ReactivePage extends StatelessWidget {
   const ReactivePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final socketController = Get.find<SocketClientController>();
     return GetBuilder<ReactiveController>(
         init: ReactiveController(),
         builder: (_) {
@@ -14,6 +17,13 @@ class ReactivePage extends StatelessWidget {
               body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Obx(() => Center(
+                    child: Text(
+                      socketController.message.value,
+                      style: const TextStyle(fontSize: 30),
+                    ),
+                  )),
+              /*
               Obx(() => Center(
                     child: Text(
                       'Age: ${_.myPet.age}',
@@ -31,6 +41,7 @@ class ReactivePage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     )),
               ),
+              */
             ],
           )
               // Con Maps.

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
+import 'package:getx_demo_1/controllers/socket_client_controller.dart';
 import 'package:getx_demo_1/models/pet.dart';
 
 class ReactiveController extends GetxController {
@@ -18,10 +19,24 @@ class ReactiveController extends GetxController {
       name: "Mascota",
       age: 10); // Instancia de la clase Pet, que ya es observable.
 
+  late StreamSubscription<String> _subscription;
+
   @override
   void onInit() {
     super.onInit();
     print("🎃 reactive onInit");
+    final SocketClientController socketClientController =
+        Get.find<SocketClientController>();
+
+    _subscription = socketClientController.message.listen((String data) {
+      print("message:::: $data");
+    });
+  }
+
+  @override
+  void onClose() {
+    _subscription.cancel();
+    return super.onClose();
   }
 
   void increment() {
